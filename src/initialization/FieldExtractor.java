@@ -15,8 +15,8 @@ public class FieldExtractor {
 		ReadAndParse nRAP = new ReadAndParse();
 		nRAP.readIn(userInput);
 		System.out.println("You should now have a file in your working directory");
-			
-		
+		System.out.println("Citation:\nFacista, Salvatore. (2019) Field_Extractor_Exon [computer software]. TGen. Phoenix, Arizona.\n");	
+		System.out.println("https://github.com/sfacista/Field_Extractor_Exon");
 
 	}
 	
