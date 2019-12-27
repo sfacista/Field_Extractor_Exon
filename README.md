@@ -18,7 +18,7 @@ How to accomplish with this software - no wrapper yet.
 7) Run Field_Extractor_Exon with Java 8 (1.8) +. At the command line this should looks like:
 java -jar /path/to/where/you/put/Field_Extractor_Exon.jar
 8) Field_Extractor_Exon will ask you where you put your plain-text file from the Table Browser.
-9) You will get an output file in your current working directory. Field_Extractor_Exon software is now done. From here on out, you're using external tools.
+9) You will get an output file in your current working directory. Field_Extractor_Exon software is now done. From here on out, you are using external tools.
 *Warning: You have to perform the last step of this process below this point, or your reference genome will have introns capitalized, and exons in lower case.*
 10) Remove the header in the output file.
 11) Download your reference genome.
@@ -31,7 +31,7 @@ bedtools maskfasta [OPTIONS] -fi <input FASTA> -bed <BED/GFF/VCF> -fo <output FA
   sed -i 'y/acgntACGNT/ACGNTacgnt/' /path/to/my_new_custom_masked_reference_genome.fa
 
 Troubleshooting:
-1) Ensure the header is removed from the bed file that Field_Extractor_Exon creates. The header is in there to remind you what is what, but most programs won't tolerate it inside of the .bed file.
-2) Remove funny characters from your Field_Extractor_Exon output file name if you can't copy/ paste them over directly. 
-3) Ensure that you aren't using spaces or other types of delimiters. Exons are separated by commas, and fields are separated by tabs.
+1) Ensure the header is removed from the bed file that Field_Extractor_Exon creates. The header is in there for reference, but most programs do not tolerate it inside of the .bed file.
+2) Remove funny characters from your Field_Extractor_Exon output file name if you can not copy/ paste them over directly. 
+3) Ensure that you are not using spaces or other types of delimiters. Exons are separated by commas, and fields are separated by tabs.
 4) Field_Extractor_Exon will use your working directory. If you run it from a different directory, your output will be in the directory you are currently in, and not necessarily where the .jar exists.
