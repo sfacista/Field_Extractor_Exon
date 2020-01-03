@@ -24,8 +24,10 @@ java -jar /path/to/where/you/put/Field_Extractor_Exon.jar
 11) Download your reference genome.
 12) Use the custom bed file you created with Field_Extractor_Exon in conjunction with bedtools makefasta -soft:
 bedtools maskfasta [OPTIONS] -fi <input FASTA> -bed <BED/GFF/VCF> -fo <output FASTA>
+  
   e.g.:
-  bedtools maskfasta -soft -fi my_reference_genome.fa -bed field_extractor_exon_20019-12-27T191216.257288.bed -fo my_new_custom_masked_reference_genome.fa
+  bedtools maskfasta -soft -fullHeader -fi my_reference_genome.fa -bed field_extractor_exon_20019-12-27T191216.257288.bed -fo my_new_custom_masked_reference_genome.fa
+  
 *Warning: You have to perform this last step, or your reference genome will have introns capitalized, and exons in lower case.*
  13) Invert the casing of the custom-masked genome using a stream editing utility, or this sed script:
   sed -i 'y/acgntACGNT/ACGNTacgnt/' /path/to/my_new_custom_masked_reference_genome.fa
@@ -35,3 +37,6 @@ Troubleshooting:
 2) Remove funny characters from your Field_Extractor_Exon output file name if you can not copy/ paste them over directly. 
 3) Ensure that you are not using spaces or other types of delimiters. Exons are separated by commas, and fields are separated by tabs.
 4) Field_Extractor_Exon will use your working directory. If you run it from a different directory, your output will be in the directory you are currently in, and not necessarily where the .jar exists.
+5) Remember to use soft and fullHeader options for bedtools. 
+6) Remember to index or carry-over index .fai files as needed.
+7) Remember that chr1 is not equivalent to 1 for the .fa headers. (">chr1" != ">1"). Y != y and X != x.
