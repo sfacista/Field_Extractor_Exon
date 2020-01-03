@@ -29,6 +29,7 @@ bedtools maskfasta [OPTIONS] -fi <input FASTA> -bed <BED/GFF/VCF> -fo <output FA
   bedtools maskfasta -soft -fullHeader -fi my_reference_genome.fa -bed field_extractor_exon_20019-12-27T191216.257288.bed -fo my_new_custom_masked_reference_genome.fa
   
 *Warning: You have to perform this last step, or your reference genome will have introns capitalized, and exons in lower case.*
+ 
  13) Invert the casing of the custom-masked genome using a stream editing utility, or this sed script:
   sed -i 'y/acgntACGNT/ACGNTacgnt/' /path/to/my_new_custom_masked_reference_genome.fa
 
